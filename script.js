@@ -1,5 +1,4 @@
-setInterval(setTheClock, 500);
-setInterval(soundEffect, 1100);
+setInterval(setTheClock, 1000);
 
 for (var i = 1, j = 30; i <= 12; i++, j+=30) {
 
@@ -7,11 +6,19 @@ document.querySelector(".number-" + i).style.transform = "rotate(" + j + "deg)";
 document.querySelector(".inner-digit-" + i).style.transform = "rotate(-" + j + "deg)";
 };
 
-function soundEffect(){
-  var audio = new Audio('snap-fat_B_minor.wav');
-  audio.play();
-};
+var soundEffect = document.getElementById("audio");
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]');
 
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      soundEffect.muted = false;
+
+    } else {
+      soundEffect.muted = true;
+    }
+  });
+});
 
 function setTheClock(){
 const secondHand = document.querySelector(".seconds");

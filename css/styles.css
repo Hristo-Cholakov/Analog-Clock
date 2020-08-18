@@ -111,4 +111,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
  border-radius: 50%;
-} 
+}
+.divswitch{
+  position: relative;
+  margin-left: 135%;
+  font-size: 30px;
+  color: red;
+}
